@@ -1,7 +1,12 @@
 import cv2
 import numpy as np
 import streamlit as st
-from pyzbar.pyzbar import decode
+
+try:
+    from pyzbar.pyzbar import decode
+except ImportError as e:
+    st.error("Failed to import pyzbar. Please ensure it is installed.")
+    st.error(f"Error: {e}")
 
 def scan_qr_code():
     # Create a video capture object
@@ -27,7 +32,7 @@ def scan_qr_code():
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         stframe.image(frame_rgb, channels="RGB", use_column_width=True)
 
-        # Break the loop if 'q' is pressed (not directly possible in Streamlit)
+        # Break the loop if 'Stop Scanning' button is pressed
         if st.button('Stop Scanning'):
             break
 
