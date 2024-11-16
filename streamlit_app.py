@@ -39,7 +39,7 @@ def scan_qr_code():
     cap.release()
 
 
-st.title("QR Code Scanner")
-st.write("Press the button below to start scanning.")
-if st.button("Start Scanning"):
-    scan_qr_code()
+    st.title("QR Code Scanner")
+    st.write("Press the button below to start scanning.")
+    if st.button("Start Scanning"):
+        scan_qr_code()
