@@ -38,8 +38,8 @@ def scan_qr_code():
 
     cap.release()
 
-if __name__ == '__main__':
-    st.title("QR Code Scanner")
-    st.write("Press the button below to start scanning.")
-    if st.button("Start Scanning"):
-        scan_qr_code()
+
+st.title("QR Code Scanner")
+st.write("Press the button below to start scanning.")
+if st.button("Start Scanning"):
+    scan_qr_code()
