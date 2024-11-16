@@ -10,7 +10,7 @@ except ImportError as e:
 
 def scan_qr_code():
     # Create a video capture object
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     # Placeholder for image display
     stframe = st.empty()
