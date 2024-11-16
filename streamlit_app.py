@@ -1,12 +1,7 @@
 import cv2
 import numpy as np
 import streamlit as st
-
-try:
-    from pyzbar.pyzbar import decode
-except ImportError as e:
-    st.error("Failed to import pyzbar. Please ensure it is installed.")
-    st.error(f"Error: {e}")
+from pyzbar.pyzbar import decode
 
 def scan_qr_code():
     # Create a video capture object
@@ -37,9 +32,13 @@ def scan_qr_code():
             break
 
     cap.release()
-  scan_qr_code()
 
+def main():
     st.title("QR Code Scanner")
     st.write("Press the button below to start scanning.")
+
     if st.button("Start Scanning"):
         scan_qr_code()
+
+if __name__ == "__main__":
+    main()
